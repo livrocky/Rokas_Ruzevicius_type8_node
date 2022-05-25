@@ -1,3 +1,4 @@
+/* eslint-disable prefer-destructuring */
 /* eslint-disable newline-per-chained-call */
 const Joi = require('joi');
 const jwt = require('jsonwebtoken');
