@@ -1,6 +1,7 @@
 /* eslint-disable newline-per-chained-call */
 const Joi = require('joi');
 const jwt = require('jsonwebtoken');
+const { jwtSecret } = require('./config');
 
 // middleware helper
 function showBody(req, res, next) {
@@ -25,6 +26,35 @@ async function validateUser(req, res, next) {
   }
 }
 
+// TOKEN VALIDATION //
+
+async function validateToken(req, res, next) {
+  const tokenFromHeaders = req.headers.authorization?.split(' ')[1];
+  console.log('req.headers.authorization===', req.headers.authorization);
+  if (!tokenFromHeaders) {
+    res.status(401).json({
+      success: false,
+      error: 'no token',
+    });
+    return;
+  }
+
+  try {
+    const tokenPayload = jwt.verify(tokenFromHeaders, jwtSecret);
+    const userId = tokenPayload.userId;
+    req.userId = userId;
+    console.log('tokenPayload===', tokenPayload);
+    next();
+  } catch (error) {
+    res.status(403).json({
+      success: false,
+      error: 'invalid token',
+    });
+  }
+}
+
 module.exports = {
   showBody,
+  validateUser,
+  validateToken,
 };

@@ -1,10 +1,11 @@
 const express = require('express');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
+const { validateUser } = require('../middleware');
 
 const userRoutes = express.Router();
 
-userRoutes.get('/register', async (req, res) => {
+userRoutes.get('/register', validateUser, async (req, res) => {
   // res.send('Register route is working');
   const { email, password } = req.body;
 
