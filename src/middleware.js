@@ -14,6 +14,7 @@ function showBody(req, res, next) {
 
 async function validateUser(req, res, next) {
   const schema = Joi.object({
+    fullName: Joi.string().trim().min(3).max(30).required(),
     email: Joi.string().trim().email().lowercase().required(),
     password: Joi.string().trim().min(5).max(10).required(),
   });

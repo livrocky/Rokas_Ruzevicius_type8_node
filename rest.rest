@@ -7,3 +7,5 @@ Content-Type: application/json
   "email": "rokasra@gmail.com",
   "password": "secret123"
 }
+###
+GET http://localhost:3003/users

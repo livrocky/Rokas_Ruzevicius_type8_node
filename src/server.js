@@ -1,11 +1,16 @@
 const express = require('express');
+const morgan = require('morgan');
 const cors = require('cors');
 const { PORT } = require('./config');
 const userRoutes = require('./routes/userRoutes');
+const { showBody } = require('./middleware');
 
 const app = express();
 
+// MIDDLEWARE //
+app.use(morgan('dev'));
 app.use(express.json());
+app.use(showBody);
 app.use(cors());
 
 app.get('/', (req, res) => {

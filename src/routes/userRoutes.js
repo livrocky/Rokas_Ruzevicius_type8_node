@@ -1,12 +1,31 @@
 const express = require('express');
-const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
+const mysql = require('mysql2/promise');
+const jwt = require('jsonwebtoken');
 const { validateUser } = require('../middleware');
 const { addUserToDb } = require('../model/userModel');
+const { dbConfig } = require('../config');
 
 const userRoutes = express.Router();
 
-userRoutes.get('/register', validateUser, async (req, res) => {
+userRoutes.get('/users', async (req, res) => {
+  let connection;
+  try {
+    connection = await mysql.createConnection(dbConfig);
+    console.log('connected');
+    const sql = 'SELECT * FROM users';
+    const [rows] = await connection.execute(sql);
+    res.json(rows);
+  } catch (error) {
+    console.log('home route error ===', error);
+    res.status(500).json('something went wrong');
+  } finally {
+    // atsijungti
+    if (connection) connection.end();
+  }
+});
+
+userRoutes.post('/register', validateUser, async (req, res) => {
   // res.send('Register route is working');
   const { fullName, email, password } = req.body;
 
