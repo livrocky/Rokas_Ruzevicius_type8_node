@@ -24,16 +24,18 @@
 
         <div class="container">
             <h2>Register</h2>
-            <form class="register-form"></form>
-            <label class="label" for="name">Full Name</label><br>
-            <input class="input" type="text" name="name" placeholder="Full Name"><br>
-            <label class="label" for="name">Email</label><br>
-            <input class="input" type="text" name="email" placeholder="Email"><br>
-            <label class="label" for="Password">Password</label><br>
-            <input class="input" type="password" name="password" placeholder="Enter Password"><br>
-            <label class="label" for="Password">Repeat Password</label><br>
-            <input class="input" type="password" name="password" placeholder="Enter Password Again"><br>
-            <button class="register">Register</button>
+            <form id="registerForm">
+                <h3 id="err"></h3>
+                <label class="label" for="name">Full Name</label><br>
+                <input class="input" type="text" name="name" placeholder="Full Name"><br>
+                <label class="label" for="name">Email</label><br>
+                <input class="input" type="text" name="email" placeholder="Email"><br>
+                <label class="label" for="Password">Password</label><br>
+                <input class="input" type="password" name="password" placeholder="Enter Password"><br>
+                <label class="label" for="Password">Repeat Password</label><br>
+                <input class="input" type="password" name="repeat_password" placeholder="Enter Password Again"><br>
+                <button class="register">Register</button>
+            </form>
             <p>Or perhaps, just <a href="./login.html">login?</a></p>
         </div>
     </main>
