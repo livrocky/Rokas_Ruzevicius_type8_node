@@ -7,5 +7,18 @@ Content-Type: application/json
   "email": "rokasra@gmail.com",
   "password": "secret123"
 }
+
+###
+POST http://localhost:3003/login
+Content-Type: application/json
+
+{
+    
+  "fullName": "Rokas Ruzevicius",
+  "email": "rokasra@gmail.com",
+  "password": "secret123"
+}
+
+
 ###
 GET http://localhost:3003/users
