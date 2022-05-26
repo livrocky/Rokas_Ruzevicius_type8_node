@@ -14,7 +14,21 @@ function showBody(req, res, next) {
 
 async function validateUser(req, res, next) {
   const schema = Joi.object({
-    // fullName: Joi.string().trim().min(3).max(30).required(),
+    fullName: Joi.string().trim().min(3).max(30).required(),
+    email: Joi.string().trim().email().lowercase().required(),
+    password: Joi.string().trim().min(5).max(10).required(),
+  });
+
+  try {
+    await schema.validateAsync(req.body, { abortEarly: false });
+    next();
+  } catch (error) {
+    console.log('schema.validateAsync===', error);
+    res.status(400).json(error.details);
+  }
+}
+async function validateUserLogin(req, res, next) {
+  const schema = Joi.object({
     email: Joi.string().trim().email().lowercase().required(),
     password: Joi.string().trim().min(5).max(10).required(),
   });
@@ -58,5 +72,6 @@ async function validateToken(req, res, next) {
 module.exports = {
   showBody,
   validateUser,
+  validateUserLogin,
   validateToken,
 };

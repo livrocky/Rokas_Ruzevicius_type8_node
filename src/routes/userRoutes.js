@@ -2,7 +2,7 @@ const express = require('express');
 const bcrypt = require('bcryptjs');
 const mysql = require('mysql2/promise');
 const jwt = require('jsonwebtoken');
-const { validateUser } = require('../middleware');
+const { validateUser, validateUserLogin } = require('../middleware');
 const { addUserToDb, findUserByEmail } = require('../model/userModel');
 const { dbConfig, jwtSecret } = require('../config');
 
@@ -52,7 +52,7 @@ userRoutes.post('/register', validateUser, async (req, res) => {
 
 // LOGIN //
 
-userRoutes.post('/login', validateUser, async (req, res) => {
+userRoutes.post('/login', validateUserLogin, async (req, res) => {
   const receivedEmail = req.body.email;
   const receivedPassword = req.body.password;
 
