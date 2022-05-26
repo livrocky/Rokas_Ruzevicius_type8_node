@@ -73,23 +73,4 @@ userRoutes.post('/login', validateUserLogin, async (req, res) => {
   res.json({ success: true, token });
 });
 
-// ACCOUNTS //
-
-userRoutes.post('/accounts', async (req, res) => {
-  let conn;
-  try {
-    // 1 prisijungti
-    conn = await mysql.createConnection(dbConfig);
-    console.log('connected');
-    const sql = 'INSERT INTO accounts (group_id, user_id) VALUES (?, ?)';
-    const [rows] = await conn.execute(sql, [group_id, user_id]);
-    res.json(rows);
-  } catch (error) {
-    console.log('error ===', error.message);
-    res.status(500).json('something went wrong');
-  } finally {
-    conn?.end();
-  }
-});
-
 module.exports = userRoutes;

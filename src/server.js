@@ -4,6 +4,7 @@ const cors = require('cors');
 const { PORT } = require('./config');
 const userRoutes = require('./routes/userRoutes');
 const { showBody } = require('./middleware');
+const accountRoutes = require('./routes/accountRoutes');
 
 const app = express();
 
@@ -19,6 +20,7 @@ app.get('/', (req, res) => {
 
 // Routes
 app.use('/', userRoutes);
+app.use('/', accountRoutes);
 
 app.all('*', (req, res) => {
   res.status(400).send({ error: 'Page not found' });
