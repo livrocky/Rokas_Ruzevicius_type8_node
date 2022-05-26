@@ -74,21 +74,21 @@ userRoutes.post('/login', validateUserLogin, async (req, res) => {
 
 // ACCOUNTS //
 
-// userRoutes.get('/accounts', async (req, res) => {
-//   let conn;
-//   try {
-//     // 1 prisijungti
-//     conn = await mysql.createConnection(dbConfig);
-//     console.log('connected');
-//     const sql = 'SELECT * FROM groups LEFT JOIN users ON user.id = groups.id';
-//     const [rows] = await conn.query(sql);
-//     res.json(rows);
-//   } catch (error) {
-//     console.log('error JOIN pets ===', error.message);
-//     res.status(500).json('something went wrong');
-//   } finally {
-//     conn?.end();
-//   }
-// });
+userRoutes.post('/accounts', async (req, res) => {
+  let conn;
+  try {
+    // 1 prisijungti
+    conn = await mysql.createConnection(dbConfig);
+    console.log('connected');
+    const sql = 'INSERT INTO accounts (group_id, user_id) LEFT JOIN groups ON ';
+    const [rows] = await conn.query(sql);
+    res.json(rows);
+  } catch (error) {
+    console.log('error JOIN pets ===', error.message);
+    res.status(500).json('something went wrong');
+  } finally {
+    conn?.end();
+  }
+});
 
 module.exports = userRoutes;

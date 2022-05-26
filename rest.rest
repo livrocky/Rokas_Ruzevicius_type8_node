@@ -17,6 +17,15 @@ Content-Type: application/json
   "password": "secret123"
 }
 
+###
+POST http://localhost:3003/accounts
+Content-Type: application/json
+
+{
+  "group_id": "2",
+  "user_id": "2"
+}
+
 
 ###
 GET http://localhost:3003/users
