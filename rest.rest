@@ -3,8 +3,8 @@ POST http://localhost:3003/register
 Content-Type: application/json
 
 {
-  "fullName": "Rokas Ruzevicius",
-  "email": "rokasra@gmail.com",
+  "fullName": "Jonas Jonaitis",
+  "email": "jonas@ponas.com",
   "password": "secret123"
 }
 
@@ -13,8 +13,6 @@ POST http://localhost:3003/login
 Content-Type: application/json
 
 {
-    
-  "fullName": "Rokas Ruzevicius",
   "email": "rokasra@gmail.com",
   "password": "secret123"
 }
