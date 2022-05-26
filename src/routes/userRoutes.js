@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 const express = require('express');
 const bcrypt = require('bcryptjs');
 const mysql = require('mysql2/promise');
@@ -80,11 +81,11 @@ userRoutes.post('/accounts', async (req, res) => {
     // 1 prisijungti
     conn = await mysql.createConnection(dbConfig);
     console.log('connected');
-    const sql = 'INSERT INTO accounts (group_id, user_id) LEFT JOIN groups ON ';
-    const [rows] = await conn.query(sql);
+    const sql = 'INSERT INTO accounts (group_id, user_id) VALUES (?, ?)';
+    const [rows] = await conn.execute(sql, [group_id, user_id]);
     res.json(rows);
   } catch (error) {
-    console.log('error JOIN pets ===', error.message);
+    console.log('error ===', error.message);
     res.status(500).json('something went wrong');
   } finally {
     conn?.end();
