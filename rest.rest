@@ -1,4 +1,4 @@
-###
+### REGISTER
 POST http://localhost:3003/register
 Content-Type: application/json
 
@@ -8,7 +8,7 @@ Content-Type: application/json
   "password": "labas123"
 }
 
-###
+### LOGIN
 POST http://localhost:3003/login
 Content-Type: application/json
 
@@ -17,7 +17,7 @@ Content-Type: application/json
   "password": "labas123"
 }
 
-###
+### ACCOUNTS
 POST http://localhost:3003/accounts
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImlhdCI6MTY1MzY1Mjg1OSwiZXhwIjoxNjUzNjU2NDU5fQ.-iiNKGrwm7sZosHjNAUwChleERVJUjUX2imc_Sy5JCM
@@ -30,24 +30,21 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImlhd
 GET http://localhost:3003/accounts
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImlhdCI6MTY1MzY1Mjg1OSwiZXhwIjoxNjUzNjU2NDU5fQ.-iiNKGrwm7sZosHjNAUwChleERVJUjUX2imc_Sy5JCM
 
-
-###
-GET http://localhost:3003/users
-
 ###
 GET http://localhost:3003/accounts/
 
-###
+
+### BILLS
 POST http://localhost:3003/bills?group_id=2
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImlhdCI6MTY1MzY1Mjg1OSwiZXhwIjoxNjUzNjU2NDU5fQ.-iiNKGrwm7sZosHjNAUwChleERVJUjUX2imc_Sy5JCM
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImlhdCI6MTY1MzY2MzE3MywiZXhwIjoxNjUzNjY2NzczfQ.KfC6RKFGzpagR7bE7DU9ojBORtYAdOe3YOcHIj5imu0
 
 {
-  "group_id": 2,
-  "amount": 100,
-  "description": "Dinner"
+  "group_id": 3,
+  "amount": 80,
+  "description": "Breakfast"
 }
 
 ###
-GET http://localhost:3003/bills
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImlhdCI6MTY1MzY1Mjg1OSwiZXhwIjoxNjUzNjU2NDU5fQ.-iiNKGrwm7sZosHjNAUwChleERVJUjUX2imc_Sy5JCM
+GET http://localhost:3003/bills/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImlhdCI6MTY1MzY2MzE3MywiZXhwIjoxNjUzNjY2NzczfQ.KfC6RKFGzpagR7bE7DU9ojBORtYAdOe3YOcHIj5imu0

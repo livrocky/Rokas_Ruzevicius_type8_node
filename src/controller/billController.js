@@ -1,14 +1,10 @@
 /* eslint-disable camelcase */
-const { getBillByGroupIdDb, addBillToDb } = require('../model/billModel');
+const { getBillByGroupId, addBillToDb } = require('../model/billModel');
 
-async function getBillByGroupId(req, res) {
+async function billByGroupId(req, res) {
   const { group_id } = req.params;
-  const id = req.userId;
-  console.log('group_id===', group_id);
-  console.log('id===', id);
-
   try {
-    const billArrayByGroupId = await getBillByGroupIdDb(group_id);
+    const billArrayByGroupId = await getBillByGroupId(group_id);
     res.json(billArrayByGroupId);
   } catch (error) {
     console.log('billArrayByGroupId===', error);
@@ -21,9 +17,9 @@ async function addNewBill(req, res) {
   const { amount, description } = req.body;
 
   try {
-    const Result = await addBillToDb(group_id, amount, description);
-    if (Result.affectedRows === 1) {
-      res.sendStatus(201).json('Bill successfully added!');
+    const result = await addBillToDb(group_id, amount, description);
+    if (result.affectedRows === 1) {
+      res.status(201).json('Bill successfully added!');
       return;
     }
     res.status(400).json('Bill not added!');
@@ -34,7 +30,7 @@ async function addNewBill(req, res) {
 }
 
 module.exports = {
-  getBillByGroupId,
+  billByGroupId,
   addBillToDb,
   addNewBill,
 };

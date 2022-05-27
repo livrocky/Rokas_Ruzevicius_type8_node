@@ -17,7 +17,7 @@ async function executeToDb(sql, dataToDbArr) {
 }
 
 function getBillByGroupId(group_id) {
-  const sql = 'SELECT * FROM bills WHERE group_id=?';
+  const sql = 'SELECT * FROM bills WHERE group_id = ?';
   return executeToDb(sql, [group_id]);
 }
 
