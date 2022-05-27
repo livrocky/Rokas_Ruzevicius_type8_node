@@ -20,15 +20,15 @@ Content-Type: application/json
 ###
 POST http://localhost:3003/accounts
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImlhdCI6MTY1MzY0MDM1MiwiZXhwIjoxNjUzNjQzOTUyfQ.Ex7hfwxDLD3FF82Umy2MMPv9AWyyfZPlvIwOWmFau7U
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImlhdCI6MTY1MzY1Mjg1OSwiZXhwIjoxNjUzNjU2NDU5fQ.-iiNKGrwm7sZosHjNAUwChleERVJUjUX2imc_Sy5JCM
 
 {
-  "group_id": 4
+  "group_id": 5
 }
 
 ###
 GET http://localhost:3003/accounts
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImlhdCI6MTY1MzY0MDM1MiwiZXhwIjoxNjUzNjQzOTUyfQ.Ex7hfwxDLD3FF82Umy2MMPv9AWyyfZPlvIwOWmFau7U
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImlhdCI6MTY1MzY1Mjg1OSwiZXhwIjoxNjUzNjU2NDU5fQ.-iiNKGrwm7sZosHjNAUwChleERVJUjUX2imc_Sy5JCM
 
 
 ###
@@ -36,3 +36,18 @@ GET http://localhost:3003/users
 
 ###
 GET http://localhost:3003/accounts/
+
+###
+POST http://localhost:3003/bills?group_id=2
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImlhdCI6MTY1MzY1Mjg1OSwiZXhwIjoxNjUzNjU2NDU5fQ.-iiNKGrwm7sZosHjNAUwChleERVJUjUX2imc_Sy5JCM
+
+{
+  "group_id": 2,
+  "amount": 100,
+  "description": "Dinner"
+}
+
+###
+GET http://localhost:3003/bills
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImlhdCI6MTY1MzY1Mjg1OSwiZXhwIjoxNjUzNjU2NDU5fQ.-iiNKGrwm7sZosHjNAUwChleERVJUjUX2imc_Sy5JCM
