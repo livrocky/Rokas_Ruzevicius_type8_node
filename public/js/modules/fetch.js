@@ -10,8 +10,6 @@ export async function getFetch(endpoint, token) {
     const dataInJs = await resp.json();
     return dataInJs;
   } catch (error) {
-    console.warn('erro in getFetch', error);
+    console.warn('error in getFetch', error);
   }
 }
-
-export async function postFetch(endpoint, data) {}

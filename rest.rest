@@ -1,5 +1,5 @@
 ### REGISTER
-POST http://localhost:3003/register
+POST http://localhost:3003/api/register
 Content-Type: application/json
 
 {
@@ -9,7 +9,7 @@ Content-Type: application/json
 }
 
 ### LOGIN
-POST http://localhost:3003/login
+POST http://localhost:3003/api/login
 Content-Type: application/json
 
 {
@@ -18,26 +18,26 @@ Content-Type: application/json
 }
 
 ### ACCOUNTS
-POST http://localhost:3003/accounts
+POST http://localhost:3003/api/accounts
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImlhdCI6MTY1MzY1Mjg1OSwiZXhwIjoxNjUzNjU2NDU5fQ.-iiNKGrwm7sZosHjNAUwChleERVJUjUX2imc_Sy5JCM
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImlhdCI6MTY1MzY2ODY5MCwiZXhwIjoxNjUzNjcyMjkwfQ.fQ15siG5AZJ9EtJiroUcIw3Vqr1fGi1-MCz92LB1nZU
 
 {
   "group_id": 5
 }
 
 ###
-GET http://localhost:3003/accounts
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImlhdCI6MTY1MzY1Mjg1OSwiZXhwIjoxNjUzNjU2NDU5fQ.-iiNKGrwm7sZosHjNAUwChleERVJUjUX2imc_Sy5JCM
+GET http://localhost:3003/api/accounts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImlhdCI6MTY1MzY2ODY5MCwiZXhwIjoxNjUzNjcyMjkwfQ.fQ15siG5AZJ9EtJiroUcIw3Vqr1fGi1-MCz92LB1nZU
 
 ###
-GET http://localhost:3003/accounts/
+GET http://localhost:3003/api/accounts/
 
 
 ### BILLS
-POST http://localhost:3003/bills?group_id=2
+POST http://localhost:3003/api/bills?group_id=2
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImlhdCI6MTY1MzY2MzE3MywiZXhwIjoxNjUzNjY2NzczfQ.KfC6RKFGzpagR7bE7DU9ojBORtYAdOe3YOcHIj5imu0
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImlhdCI6MTY1MzY2ODY5MCwiZXhwIjoxNjUzNjcyMjkwfQ.fQ15siG5AZJ9EtJiroUcIw3Vqr1fGi1-MCz92LB1nZU
 
 {
   "group_id": 3,
@@ -46,5 +46,5 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImlhd
 }
 
 ###
-GET http://localhost:3003/bills/1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImlhdCI6MTY1MzY2MzE3MywiZXhwIjoxNjUzNjY2NzczfQ.KfC6RKFGzpagR7bE7DU9ojBORtYAdOe3YOcHIj5imu0
+GET http://localhost:3003/api/bills/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImlhdCI6MTY1MzY2ODY5MCwiZXhwIjoxNjUzNjcyMjkwfQ.fQ15siG5AZJ9EtJiroUcIw3Vqr1fGi1-MCz92LB1nZU

@@ -20,9 +20,9 @@ app.get('/', (req, res) => {
 });
 
 // Routes
-app.use('/', userRoutes);
-app.use('/', accountRoutes);
-app.use('/', billRoutes);
+app.use('/api', userRoutes);
+app.use('/api', accountRoutes);
+app.use('/api', billRoutes);
 
 app.all('*', (req, res) => {
   res.status(400).send({ error: 'Page not found' });

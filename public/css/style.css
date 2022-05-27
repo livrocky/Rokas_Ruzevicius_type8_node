@@ -34,3 +34,18 @@ border: 2px solid black;
 /* .label{
     margin-bottom: 50px;
 } */
+
+
+.error-msg {
+    color: tomato;
+    margin-top: 0;
+  }
+
+
+  .invalid-input {
+    border: 2px solid tomato;
+    background-color: rgb(255, 207, 199);
+    box-shadow: 10px 10px 10px rgb(171, 234, 144);
+
+  }
+  
