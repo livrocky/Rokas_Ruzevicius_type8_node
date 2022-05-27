@@ -34,15 +34,16 @@ async function userLogin(req, res) {
   const receivedEmail = req.body.email;
   const receivedPassword = req.body.password;
 
-  const foundUser = await findUserByEmail(receivedEmail);
+  const foundUserArr = await findUserByEmail(receivedEmail);
+
+  const foundUser = foundUserArr[0];
+
   console.log('foundUser===', foundUser);
   if (!foundUser) {
     res.status(400).json('email or passowrd not found (email)');
-    return;
   }
   if (!bcrypt.compareSync(receivedPassword, foundUser.password)) {
     res.status(400).json('email or password not found (pass)');
-    return;
   }
   const payload = { userId: foundUser.id };
   const token = jwt.sign(payload, jwtSecret, { expiresIn: '1h' });

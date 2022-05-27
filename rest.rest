@@ -3,9 +3,9 @@ POST http://localhost:3003/register
 Content-Type: application/json
 
 {
-  "fullName": "Super mama",
-  "email": "tavo@mama.lt",
-  "password": "secret123"
+  "fullName": "laba Diena",
+  "email": "laba@diena.lt",
+  "password": "labas123"
 }
 
 ###
@@ -13,22 +13,22 @@ POST http://localhost:3003/login
 Content-Type: application/json
 
 {
-  "email": "tavo@mama.lt",
-  "password": "secret123"
+  "email": "laba@diena.lt",
+  "password": "labas123"
 }
 
 ###
 POST http://localhost:3003/accounts
 Content-Type: application/json
-Authorization: Bearer a2ee192864c4e4679969a15c95f7ca7283fe236b6b782587b7ea9f03ab3be92d4df401636c7146d4f26bf56b64f173edcd77929980cf9a464cd980a7f4254941
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImlhdCI6MTY1MzY0MDM1MiwiZXhwIjoxNjUzNjQzOTUyfQ.Ex7hfwxDLD3FF82Umy2MMPv9AWyyfZPlvIwOWmFau7U
 
 {
-  "group_id": 1
+  "group_id": 4
 }
 
 ###
 GET http://localhost:3003/accounts
-Authorization: Bearer a2ee192864c4e4679969a15c95f7ca7283fe236b6b782587b7ea9f03ab3be92d4df401636c7146d4f26bf56b64f173edcd77929980cf9a464cd980a7f4254941
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImlhdCI6MTY1MzY0MDM1MiwiZXhwIjoxNjUzNjQzOTUyfQ.Ex7hfwxDLD3FF82Umy2MMPv9AWyyfZPlvIwOWmFau7U
 
 
 ###
