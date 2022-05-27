@@ -3,8 +3,8 @@ POST http://localhost:3003/register
 Content-Type: application/json
 
 {
-  "fullName": "Tavo Tevas",
-  "email": "tavo@tevukas.lt",
+  "fullName": "Super mama",
+  "email": "tavo@mama.lt",
   "password": "secret123"
 }
 
@@ -13,18 +13,22 @@ POST http://localhost:3003/login
 Content-Type: application/json
 
 {
-  "email": "labas@krabas.com",
+  "email": "tavo@mama.lt",
   "password": "secret123"
 }
 
 ###
 POST http://localhost:3003/accounts
 Content-Type: application/json
+Authorization: Bearer a2ee192864c4e4679969a15c95f7ca7283fe236b6b782587b7ea9f03ab3be92d4df401636c7146d4f26bf56b64f173edcd77929980cf9a464cd980a7f4254941
 
 {
-  "group_id": 3,
-  "user_id": 3
+  "group_id": 1
 }
+
+###
+GET http://localhost:3003/accounts
+Authorization: Bearer a2ee192864c4e4679969a15c95f7ca7283fe236b6b782587b7ea9f03ab3be92d4df401636c7146d4f26bf56b64f173edcd77929980cf9a464cd980a7f4254941
 
 
 ###
