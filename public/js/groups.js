@@ -1,6 +1,16 @@
-import { BASE_URL, getFetch } from '../js/modules/fetch.js';
+import { getFetch } from '../js/modules/fetch.js';
+
+// import { renderGroups } from './modules/html.js';
 
 const cardContainerEl = document.querySelector('.cards-container');
+
+function makeEl(tagName, text, dest, elClass = null) {
+  const el = document.createElement(tagName);
+  el.textContent = text;
+  if (elClass) el.className = elClass;
+  dest.appendChild(el);
+  return el;
+}
 
 function createCard(newCardObj) {
   const articleEl = document.createElement('article');
@@ -10,6 +20,14 @@ function createCard(newCardObj) {
   makeEl('p', `${newCardObj.name}`, articleEl);
 
   return articleEl;
+}
+
+function renderGroups(cardArr, dest) {
+  dest.innerHTML = '';
+  cardArr.forEach((cObj) => {
+    const card = createCard(cObj);
+    dest.append(card);
+  });
 }
 
 async function getGroups(token) {
