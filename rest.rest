@@ -20,7 +20,7 @@ Content-Type: application/json
 ### ACCOUNTS
 POST http://localhost:3003/api/accounts
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImlhdCI6MTY1MzczNTg2MiwiZXhwIjoxNjUzNzM5NDYyfQ.Y1T1YWh7kmjQN_RFkOTjXlthwufhX2xcbR1L9mvHMDE
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImlhdCI6MTY1Mzc0OTQxMywiZXhwIjoxNjUzNzUzMDEzfQ.OMG5FmJG9pAw8ugvqKj6IugtZHAWWCqHP0D5zDrIPak
 
 {
   "group_id": 5
@@ -28,7 +28,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImlhd
 
 ###
 GET http://localhost:3003/api/accounts
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImlhdCI6MTY1MzczNTg2MiwiZXhwIjoxNjUzNzM5NDYyfQ.Y1T1YWh7kmjQN_RFkOTjXlthwufhX2xcbR1L9mvHMDE
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImlhdCI6MTY1Mzc0OTQxMywiZXhwIjoxNjUzNzUzMDEzfQ.OMG5FmJG9pAw8ugvqKj6IugtZHAWWCqHP0D5zDrIPak
 
 ###
 GET http://localhost:3003/api/accounts/
@@ -37,7 +37,7 @@ GET http://localhost:3003/api/accounts/
 ### BILLS
 POST http://localhost:3003/api/bills?group_id=2
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImlhdCI6MTY1MzczNTg2MiwiZXhwIjoxNjUzNzM5NDYyfQ.Y1T1YWh7kmjQN_RFkOTjXlthwufhX2xcbR1L9mvHMDE
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImlhdCI6MTY1Mzc0OTQxMywiZXhwIjoxNjUzNzUzMDEzfQ.OMG5FmJG9pAw8ugvqKj6IugtZHAWWCqHP0D5zDrIPak
 
 {
   "group_id": 3,
@@ -46,9 +46,9 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImlhd
 }
 
 ###
-GET http://localhost:3003/api/bills/1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImlhdCI6MTY1MzczNTg2MiwiZXhwIjoxNjUzNzM5NDYyfQ.Y1T1YWh7kmjQN_RFkOTjXlthwufhX2xcbR1L9mvHMDE
+GET http://localhost:3003/api/bills/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImlhdCI6MTY1Mzc0OTQxMywiZXhwIjoxNjUzNzUzMDEzfQ.OMG5FmJG9pAw8ugvqKj6IugtZHAWWCqHP0D5zDrIPak
 
 ### GROUPS
 GET http://localhost:3003/api/groups
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImlhdCI6MTY1MzczNTg2MiwiZXhwIjoxNjUzNzM5NDYyfQ.Y1T1YWh7kmjQN_RFkOTjXlthwufhX2xcbR1L9mvHMDE
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImlhdCI6MTY1Mzc0OTQxMywiZXhwIjoxNjUzNzUzMDEzfQ.OMG5FmJG9pAw8ugvqKj6IugtZHAWWCqHP0D5zDrIPak

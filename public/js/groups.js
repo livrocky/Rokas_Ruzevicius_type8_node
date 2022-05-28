@@ -1,4 +1,6 @@
+/* eslint-disable import/no-useless-path-segments */
 import { getFetch } from '../js/modules/fetch.js';
+
 const token = localStorage.getItem('articleUserToken');
 // import { renderGroups } from './modules/html.js';
 
