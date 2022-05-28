@@ -63,3 +63,9 @@ border: 2px solid black;
     text-align: center;
     font-size: 12px;
   }
+
+
+  .success-msg {
+      color: green;
+      margin-top: -0.8rem;
+  }

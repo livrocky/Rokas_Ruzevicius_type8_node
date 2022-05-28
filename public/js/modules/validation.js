@@ -63,12 +63,12 @@ export function checkInput(valueToCheck, field, rulesArr) {
       console.log('tikrinam email');
       const etaFound = valueToCheck.split('@');
       if (etaFound.length !== 2) {
-        addError(`Please check your e-mail`, field);
+        addError('Please check your e-mail', field);
         return;
       }
       const dotFound = etaFound[1].includes('.');
       if (dotFound === false) {
-        addError(`Please check your e-mail`, field);
+        addError('Please check your e-mail', field);
       }
     }
   }

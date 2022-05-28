@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
 const express = require('express');
-const { validateUser, validateUserLogin } = require('../middleware');
+const { validateUser } = require('../middleware');
 const controller = require('../controller/userController');
 
 const userRoutes = express.Router();
@@ -28,6 +28,6 @@ userRoutes.post('/register', validateUser, controller.userRegister);
 
 // LOGIN //
 
-userRoutes.post('/login', validateUserLogin, controller.userLogin);
+userRoutes.post('/login', validateUser, controller.userLogin);
 
 module.exports = userRoutes;
