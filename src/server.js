@@ -6,6 +6,7 @@ const userRoutes = require('./routes/userRoutes');
 // const { showBody } = require('./middleware');
 const accountRoutes = require('./routes/accountRoutes');
 const billRoutes = require('./routes/billRoutes');
+const groupRoutes = require('./routes/groupRoutes');
 
 const app = express();
 
@@ -23,6 +24,7 @@ app.get('/', (req, res) => {
 app.use('/api', userRoutes);
 app.use('/api', accountRoutes);
 app.use('/api', billRoutes);
+app.use('/api', groupRoutes);
 
 app.all('*', (req, res) => {
   res.status(400).send({ error: 'Page not found' });

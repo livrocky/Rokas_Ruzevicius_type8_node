@@ -1,3 +1,4 @@
+/* eslint-disable no-use-before-define */
 /* eslint-disable import/no-useless-path-segments */
 import { clearErrorsArr, checkInput, errorsArr } from './modules/validation.js';
 import { BASE_URL } from '../js/modules/fetch.js';
@@ -34,14 +35,14 @@ loginFormEl.addEventListener('submit', async (e) => {
 
   if (dataInJs.success === true) {
     errorMsgEl.textContent = '';
-    successMsg('Okey!');
+    successMsg('Logged in successfully!');
     const { token } = dataInJs;
     localStorage.setItem('articleUserToken', token);
-    // window.location.href = 'groups.html';
+    window.location.href = 'groups.html';
     clearErrors();
   } else {
     errorMsgEl.textContent = '';
-    console.log('login fail');
+    console.log('Login failed!');
     handleError(dataInJs);
   }
 });
@@ -77,6 +78,7 @@ function successMsg(msg) {
 function clearErrors() {
   clearErrorsArr();
   errorMsgEl.forEach((htmlElement) => {
+    // eslint-disable-next-line no-param-reassign
     htmlElement.textContent = '';
     htmlElement.previousElementSibling.classList.remove('invalid-input');
   });
