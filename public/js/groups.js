@@ -1,5 +1,5 @@
 import { getFetch } from '../js/modules/fetch.js';
-
+const token = localStorage.getItem('articleUserToken');
 // import { renderGroups } from './modules/html.js';
 
 const cardContainerEl = document.querySelector('.cards-container');
@@ -16,7 +16,7 @@ function createCard(newCardObj) {
   const articleEl = document.createElement('article');
 
   articleEl.className = 'card-group';
-  makeEl('h3', `${newCardObj.id}`, articleEl);
+  makeEl('h3', `ID: ${newCardObj.id}`, articleEl);
   makeEl('p', `${newCardObj.name}`, articleEl);
 
   return articleEl;
@@ -46,4 +46,4 @@ async function getGroups(token) {
   }
 }
 
-getGroups();
+getGroups(token);
