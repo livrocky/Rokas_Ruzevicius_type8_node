@@ -30,35 +30,24 @@ function checkMinLength(value, minLength, field) {
 export function checkInput(valueToCheck, field, rulesArr) {
   // eslint-disable-next-line no-restricted-syntax
   for (const rule of rulesArr) {
-    // rule === required
     if (rule === 'required') {
       if (checkRequired(valueToCheck, field)) {
         return;
       }
     }
-    // // rule === positive
-    // if (rule === 'positive') {
-    //   if (valueToCheck < 0) {
-    //     addError('must be positive', field);
-    //     return;
-    //   }
-    // }
 
-    // rule === minLength-X
     if (rule.split('-')[0] === 'minLength') {
       const min = rule.split('-')[1];
       checkMinLength(valueToCheck, min, field);
     }
 
-    // rule === maxLength-X
     if (rule.split('-')[0] === 'maxLength') {
       const max = rule.split('-')[1];
       if (valueToCheck.length >= max) {
         addError(`Too long. Length must be less than or equal ${max}`, field);
       }
     }
-    // rule === email
-    // rule = . after @
+
     if (rule === 'email') {
       console.log('tikrinam email');
       const etaFound = valueToCheck.split('@');

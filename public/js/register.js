@@ -1,8 +1,9 @@
+/* eslint-disable import/no-useless-path-segments */
+/* eslint-disable no-use-before-define */
 /* eslint-disable import/newline-after-import */
 /* eslint-disable object-curly-newline */
 import { clearErrorsArr, checkInput, errorsArr } from './modules/validation.js';
 import { BASE_URL } from '../js/modules/fetch.js';
-console.log('BASE_URL===', BASE_URL);
 
 const formEl = document.getElementById('registerForm');
 const errorMsg = document.querySelectorAll('.error-msg');
@@ -32,13 +33,11 @@ formEl.addEventListener('submit', (e) => {
     handleError(errorsArr);
     return;
   }
-  console.log('34 eilute');
   // 2. palytingi ar sutampa slaptazodziai
   if (formData.password !== formData.repeatPassword) {
     handleError('nesutampa slaptazodziai');
     return;
   }
-  console.log('39 eilute');
   registerFetch(formData.fullName, formData.email, formData.password);
 });
 
@@ -57,7 +56,6 @@ function handleError(msg) {
     });
   }
 }
-console.log('59 eilute');
 async function registerFetch(fullName, email, password) {
   console.log('registerFetch===', registerFetch);
   const registerObj = { fullName, email, password };
@@ -68,7 +66,6 @@ async function registerFetch(fullName, email, password) {
     },
     body: JSON.stringify(registerObj),
   });
-  console.log('70 eilute');
   // const dataInJs = await resp.json();
   if (resp.status === 201) {
     successMsg('register success');
@@ -93,7 +90,6 @@ function successMsg(msg) {
 }
 
 function clearErrors() {
-  // errorsArr = [];
   clearErrorsArr();
   errorMsg.forEach((htmlElement) => {
     // eslint-disable-next-line no-param-reassign
