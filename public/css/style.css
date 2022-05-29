@@ -172,7 +172,7 @@ border: 2px solid black;
     max-width: 600px;
     margin: 0 auto;
     padding: 3%;
-    background-color: rgba(236, 187, 41, 0.468);
+    background-color: rgba(152, 238, 232, 0.468);
     border-radius: 0.8rem;
     border: 0px solid rgb(30, 126, 210);
     align-items: center;
@@ -188,7 +188,7 @@ border: 2px solid black;
   }
 
   .register-body {
-    background-image: url('./img/register.jpeg');
+    background-image: url('./img/register4.jpeg');
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 100vh;
