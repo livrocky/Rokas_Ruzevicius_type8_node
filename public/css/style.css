@@ -31,10 +31,6 @@ border: 2px solid black;
     border: 1px solid rgb(196, 191, 191);
 }
 
-/* .label{
-    margin-bottom: 50px;
-} */
-
 
 .error-msg {
     color: tomato;
@@ -100,6 +96,13 @@ border: 2px solid black;
     margin-bottom: 50px;
   }
 
+  .group-container { 
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 1.5rem;
+    }
+
+/* BILLS */
 
   .bills-container{
     max-width: 1200px;
@@ -117,8 +120,6 @@ border: 2px solid black;
     margin: 0 auto;
     padding: 0 5%;
   }
-
-/* BILLS */
 
   table {
     border-collapse: collapse;
@@ -151,3 +152,9 @@ border: 2px solid black;
   tr:nth-child(even) {
     /* background-color: #fffff */
   }
+
+  h3#err{
+    color: tomato;
+  }
+
+  /* MOBILE */
