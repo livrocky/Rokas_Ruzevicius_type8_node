@@ -6,16 +6,21 @@ const { jwtSecret } = require('../config');
 // REGISTER //
 
 async function userRegister(req, res) {
-  // res.send('Register route is working');
-  const { fullName, email, password } = req.body;
-
+  const gautasEmail = req.body.email;
+  const { fullName, password } = req.body;
   const plainTextPassword = password;
   const hashedPassword = bcrypt.hashSync(plainTextPassword, 10);
   console.log('hashedPassword===', hashedPassword);
 
+  const foundUser = await findUserByEmail(gautasEmail);
+  if (foundUser) {
+    res.status(400).json(`User with ${gautasEmail} e-mail already exists`);
+    return;
+  }
+
   const newUser = {
     fullName,
-    email,
+    email: gautasEmail,
     password: hashedPassword,
   };
   const insertResult = await addUserToDb(newUser.fullName, newUser.email, newUser.password);

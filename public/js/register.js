@@ -6,8 +6,9 @@ import { clearErrorsArr, checkInput, errorsArr } from './modules/validation.js';
 import { BASE_URL } from '../js/modules/fetch.js';
 
 const formEl = document.getElementById('registerForm');
-const errorMsg = document.querySelectorAll('.error-msg');
+const errEl = document.querySelectorAll('.error-msg');
 const successMsgEl = document.querySelector('.success-msg');
+const errEl1 = document.getElementById('err');
 
 formEl.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -44,9 +45,9 @@ formEl.addEventListener('submit', (e) => {
 // HANDLE ERROR //
 
 function handleError(msg) {
-  errorMsg.textContent = '';
+  errEl1.textContent = '';
   if (typeof msg === 'string') {
-    errorMsg.textContent = msg;
+    errEl1.textContent = msg;
   }
   if (Array.isArray(msg)) {
     msg.forEach((eObj) => {
@@ -91,7 +92,7 @@ function successMsg(msg) {
 
 function clearErrors() {
   clearErrorsArr();
-  errorMsg.forEach((htmlElement) => {
+  errEl.forEach((htmlElement) => {
     // eslint-disable-next-line no-param-reassign
     htmlElement.textContent = '';
     htmlElement.previousElementSibling.classList.remove('invalid-input');

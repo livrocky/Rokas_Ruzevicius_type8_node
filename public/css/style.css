@@ -127,7 +127,8 @@ border: 2px solid black;
     max-width: 800px;
     margin: 25px auto;
     padding: 30px 20px;
-    background-color: rgba(78, 161, 244, 0.562);
+    background-color: rgba(78, 161, 244, 0.348);
+    color: green;
   }
   th {
     border-bottom: 1px solid rgba(244, 233, 23, 0.774);
@@ -136,7 +137,7 @@ border: 2px solid black;
   }
   
   td{
-    color: white;
+    color: brown;
   }
   th,
   td {
