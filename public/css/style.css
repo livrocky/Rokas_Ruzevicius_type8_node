@@ -127,7 +127,7 @@ border: 2px solid black;
     max-width: 800px;
     margin: 25px auto;
     padding: 30px 20px;
-    background-color: rgba(78, 161, 244, 0.348);
+    /* background-color: rgba(78, 244, 208, 0.221); */
     color: green;
   }
   th {
@@ -138,22 +138,75 @@ border: 2px solid black;
   
   td{
     color: brown;
+    background-color: rgba(238, 238, 233, 0.564);
   }
   th,
   td {
     text-align: left;
     padding: 8px;
     text-align: center;
-    border-bottom: 1px solid rgba(193, 198, 207, 0.774);
+    border-bottom: 1px solid rgba(232, 234, 237, 0.533);
     
   }
   
   tr:nth-child(even) {
-    /* background-color: #fffff */
+   background-color: rgb(222, 239, 240);
   }
 
   h3#err{
     color: tomato;
   }
 
-  /* MOBILE */
+
+    .login-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 3%;
+    background-color: rgba(43, 222, 34, 0.468);
+    border-radius: 0.8rem;
+    border: 0px solid rgb(30, 126, 210);
+    align-items: center;
+  }
+
+    .register-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 3%;
+    background-color: rgba(236, 187, 41, 0.468);
+    border-radius: 0.8rem;
+    border: 0px solid rgb(30, 126, 210);
+    align-items: center;
+  }
+
+
+  .login-body {
+    background-image: url('./img/login.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    position: relative;
+  }
+
+  .register-body {
+    background-image: url('./img/register.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    position: relative;
+  }
+
+  .group-body {
+    background-image: url('./img/blurr.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    position: relative;
+  }
+
+  .bill-body {
+    background-image: url('https://lexicdn.lexingtondowntownhotel.com/do-las-vegas-hotels-have-microwaves-.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    position: relative;
+  }
