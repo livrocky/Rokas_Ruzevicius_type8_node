@@ -1,7 +1,6 @@
 /* eslint-disable camelcase */
 const { addUserAccountDB, getUserAccountJoinGroupDB } = require('../model/accountModel');
 
-// ---------------------------------------------
 async function addUserToAccount(req, res) {
   const { group_id, user_id } = req.body;
   const tokenFromHeaders = req.headers.authorization.split(' ')[1];
@@ -21,7 +20,6 @@ async function addUserToAccount(req, res) {
     res.sendStatus(500);
   }
 }
-// -------------------------------------
 
 async function getUserAccountJoinGroup(req, res) {
   const idfromToken = req.userId;
@@ -33,7 +31,7 @@ async function getUserAccountJoinGroup(req, res) {
     res.sendStatus(500);
   }
 }
-// ----------------------
+
 module.exports = {
   addUserToAccount,
   getUserAccountJoinGroup,

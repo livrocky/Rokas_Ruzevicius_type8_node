@@ -22,22 +22,6 @@ function addUserToDb(fullName, email, password) {
   return executeDb(sql, [fullName, email, password]);
 }
 
-// async function addUserToDb(fullName, email, password) {
-//   let connection;
-//   try {
-//     connection = await mysql.createConnection(dbConfig);
-//     const sql = `
-//         INSERT INTO users(fullName, email, password) VALUES (?, ?, ?)`;
-//     const [result] = await connection.execute(sql, [fullName, email, password]);
-//     return result;
-//   } catch (error) {
-//     console.log('error addUserToDb', error);
-//     return false;
-//   } finally {
-//     connection?.end();
-//   }
-// }
-
 function findUserByEmail(email) {
   const sql = `
   SELECT * FROM users WHERE email = ?`;

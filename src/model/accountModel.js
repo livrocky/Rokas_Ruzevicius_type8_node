@@ -2,7 +2,6 @@
 const mysql = require('mysql2/promise');
 const { dbConfig } = require('../config');
 
-// -------------------------------
 async function executeToDb(sql, dataToDbArr) {
   let conn;
   try {
@@ -26,7 +25,6 @@ function getUserAccountJoinGroupDB(id) {
   return executeToDb(sql, [id]);
 }
 
-// ---------------------------------------
 module.exports = {
   addUserAccountDB,
   getUserAccountJoinGroupDB,

@@ -25,8 +25,6 @@ function checkMinLength(value, minLength, field) {
     addError(`length must be greater than ${minLength}`, field);
   }
 }
-
-// rules ['required', 'minLength-4', 'minLength-5', 'maxLength-10', 'email']
 export function checkInput(valueToCheck, field, rulesArr) {
   // eslint-disable-next-line no-restricted-syntax
   for (const rule of rulesArr) {

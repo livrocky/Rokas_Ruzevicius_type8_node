@@ -1,3 +1,5 @@
+/* eslint-disable camelcase */
+/* eslint-disable no-use-before-define */
 import { getFetch } from './modules/fetch.js';
 import { clearErrorsArr, checkInput, errorsArr } from './modules/validation.js';
 
@@ -21,6 +23,7 @@ function makeEl(tagName, text, elClass, dest) {
 }
 
 function renderBill(arr, dest) {
+  // eslint-disable-next-line no-param-reassign
   dest.innerHTML = '';
   arr.forEach((tObj) => {
     const trEl = makeEl('tr', '', '', dest);
@@ -37,33 +40,23 @@ async function getBills(userToken) {
 }
 getBills(token);
 
-// _____________________________________________ //
-
 async function fetchBill(group_id, amount, description) {
-  console.log('group_id===', group_id);
   const billObj = { group_id, amount, description };
-  //   console.log(billObj);
   const resp = await fetch(`${BASE_URL}/bills?group_id=${group_id}`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
     body: JSON.stringify(billObj),
   });
   const dataInJs = await resp.json();
-  //   console.log('dataInJs ===', dataInJs);
 
   if (dataInJs === 'Bill add') {
     successMsg('Bill successfully added!');
+    // eslint-disable-next-line no-undef
     errroEl.textContent = '';
-    // console.log('Bill add');
     formEl.elements.amount.value = '';
     formEl.elements.description.value = '';
     getBills(token);
     handleError('Bill add', true);
-
-    // const { token } = dataInJs;
-    // localStorage.setItem('Token', token);
-
-    // window.location.replace('groups.html');
   } else if (dataInJs.error === 'invalid token') {
     clearErrors();
     handleError('Invalid token', false);
@@ -79,35 +72,30 @@ function paramsvalue(search) {
   const urlParams = new URLSearchParams(queryString);
   return urlParams.get(search);
 }
-// -----------------------------------------------------
+
 formEl.addEventListener('submit', async (event) => {
   event.preventDefault();
 
+  // eslint-disable-next-line no-unused-vars
   const groupID = window.location.search.split('=');
   const groupid2 = paramsvalue('group_id');
-  const groupName = paramsvalue('groupName');
-  console.log('groupName===', groupName);
-  console.log('groupid2===', groupid2);
   const billObj = {
     amount: formEl.elements.amount.value.trim(),
     description: formEl.elements.description.value.trim(),
   };
   console.log('billObj ===', billObj);
 
-  // ------------------------------------------------
   clearErrors();
   checkInput(billObj.amount, 'amount', ['required', 'positive']);
   checkInput(billObj.description, 'description', ['required', 'minLength-2', 'maxLength-48']);
   console.log('FE errorsArr ===', errorsArr);
-  // --------------------------------------------------
-  // jei yra klaidu FE tada nesiunciam uzklausos
+
   if (errorsArr.length) {
     handleError(errorsArr);
     return;
   }
   fetchBill(groupid2, billObj.amount, billObj.description);
   window.location.reload();
-  // --------------------------------------------
 });
 
 function handleError(msg) {

@@ -3,20 +3,12 @@ const jwt = require('jsonwebtoken');
 const { addUserToDb, findUserByEmail } = require('../model/userModel');
 const { jwtSecret } = require('../config');
 
-// REGISTER //
-
 async function userRegister(req, res) {
   const gautasEmail = req.body.email;
   const { fullName, password } = req.body;
   const plainTextPassword = password;
   const hashedPassword = bcrypt.hashSync(plainTextPassword, 10);
   console.log('hashedPassword===', hashedPassword);
-
-  const foundUser = await findUserByEmail(gautasEmail);
-  if (foundUser) {
-    res.status(400).json(`User with ${gautasEmail} e-mail already exists`);
-    return;
-  }
 
   const newUser = {
     fullName,
@@ -32,8 +24,6 @@ async function userRegister(req, res) {
   }
   res.status(201).json('user created');
 }
-
-// LOGIN
 
 async function userLogin(req, res) {
   const receivedEmail = req.body.email;
@@ -55,8 +45,6 @@ async function userLogin(req, res) {
   console.log('token===', token);
   res.json({ success: true, token });
 }
-
-// EXPORT //
 
 module.exports = {
   userRegister,

@@ -23,8 +23,6 @@ formEl.addEventListener('submit', (e) => {
 
   clearErrors();
 
-  // TODO front end validation
-
   checkInput(formData.fullName, 'fullName', ['required', 'minLength-2', 'fullName']);
   checkInput(formData.email, 'email', ['required', 'minLength-4', 'email']);
   checkInput(formData.password, 'password', ['required', 'minLength-5', 'maxLength-10']);
@@ -34,15 +32,12 @@ formEl.addEventListener('submit', (e) => {
     handleError(errorsArr);
     return;
   }
-  // 2. palytingi ar sutampa slaptazodziai
   if (formData.password !== formData.repeatPassword) {
     handleError('nesutampa slaptazodziai');
     return;
   }
   registerFetch(formData.fullName, formData.email, formData.password);
 });
-
-// HANDLE ERROR //
 
 function handleError(msg) {
   errEl1.textContent = '';
@@ -67,10 +62,9 @@ async function registerFetch(fullName, email, password) {
     },
     body: JSON.stringify(registerObj),
   });
-  // const dataInJs = await resp.json();
   if (resp.status === 201) {
     successMsg('register success');
-    // window.location.href = 'login.html';
+    window.location.href = 'login.html';
   } else {
     handleError(await resp.json());
   }

@@ -4,14 +4,6 @@ const Joi = require('joi');
 const jwt = require('jsonwebtoken');
 const { jwtSecret } = require('./config');
 
-// middleware helper
-// function showBody(req, res, next) {
-//   if (req.method === 'POST') {
-//     console.log('request body ===', req.body);
-//   }
-//   next();
-// }
-
 async function validateUser(req, res, next) {
   const schema = Joi.object({
     fullName: Joi.string().min(3).max(30).required(),
@@ -75,7 +67,6 @@ async function validateToken(req, res, next) {
 }
 
 module.exports = {
-  // showBody,
   validateUser,
   validateUserLogin,
   validateToken,
