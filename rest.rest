@@ -20,35 +20,35 @@ Content-Type: application/json
 ### ACCOUNTS
 POST http://localhost:3003/api/accounts
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImlhdCI6MTY1Mzc0OTQxMywiZXhwIjoxNjUzNzUzMDEzfQ.OMG5FmJG9pAw8ugvqKj6IugtZHAWWCqHP0D5zDrIPak
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImlhdCI6MTY1MzgxOTYxNSwiZXhwIjoxNjUzODIzMjE1fQ.br8-du1gTKIIwMvNhmOTyQRHj1KuKltpcUm0j89dVw4
 
 {
-  "group_id": 5
+  "group_id": 2
 }
 
 ###
 GET http://localhost:3003/api/accounts
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImlhdCI6MTY1Mzc0OTQxMywiZXhwIjoxNjUzNzUzMDEzfQ.OMG5FmJG9pAw8ugvqKj6IugtZHAWWCqHP0D5zDrIPak
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImlhdCI6MTY1MzgxOTYxNSwiZXhwIjoxNjUzODIzMjE1fQ.br8-du1gTKIIwMvNhmOTyQRHj1KuKltpcUm0j89dVw4
 ###
 GET http://localhost:3003/api/accounts/
 
 
 ### BILLS
-POST http://localhost:3003/api/bills?group_id=2
+POST http://localhost:3003/api/bills?group_id=8
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImlhdCI6MTY1Mzc0OTQxMywiZXhwIjoxNjUzNzUzMDEzfQ.OMG5FmJG9pAw8ugvqKj6IugtZHAWWCqHP0D5zDrIPak
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImlhdCI6MTY1MzgxOTYxNSwiZXhwIjoxNjUzODIzMjE1fQ.br8-du1gTKIIwMvNhmOTyQRHj1KuKltpcUm0j89dVw4
 
 {
-  "group_id": 3,
-  "amount": 20,
-  "description": "ticket"
+  "group_id": 8,
+  "amount": 120,
+  "description": "car rental"
 }
 
 ###
 GET http://localhost:3003/api/bills/2
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImlhdCI6MTY1Mzc0OTQxMywiZXhwIjoxNjUzNzUzMDEzfQ.OMG5FmJG9pAw8ugvqKj6IugtZHAWWCqHP0D5zDrIPak
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImlhdCI6MTY1MzgxOTYxNSwiZXhwIjoxNjUzODIzMjE1fQ.br8-du1gTKIIwMvNhmOTyQRHj1KuKltpcUm0j89dVw4
+
 
 ### GROUPS
 GET http://localhost:3003/api/groups
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImlhdCI6MTY1Mzc0OTQxMywiZXhwIjoxNjUzNzUzMDEzfQ.OMG5FmJG9pAw8ugvqKj6IugtZHAWWCqHP0D5zDrIPak
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImlhdCI6MTY1MzgxOTYxNSwiZXhwIjoxNjUzODIzMjE1fQ.br8-du1gTKIIwMvNhmOTyQRHj1KuKltpcUm0j89dVw4
