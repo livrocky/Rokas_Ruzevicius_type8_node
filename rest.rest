@@ -20,7 +20,7 @@ Content-Type: application/json
 ### ACCOUNTS
 POST http://localhost:3003/api/accounts
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImlhdCI6MTY1MzgxOTYxNSwiZXhwIjoxNjUzODIzMjE1fQ.br8-du1gTKIIwMvNhmOTyQRHj1KuKltpcUm0j89dVw4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImlhdCI6MTY1MzgzMDI0MCwiZXhwIjoxNjUzODMzODQwfQ.OIzZfW0BzDNCVYCMmOYXE1ngThCMu2rgwWOLf2R5I0Y
 
 {
   "group_id": 2
@@ -28,7 +28,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImlhd
 
 ###
 GET http://localhost:3003/api/accounts
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImlhdCI6MTY1MzgxOTYxNSwiZXhwIjoxNjUzODIzMjE1fQ.br8-du1gTKIIwMvNhmOTyQRHj1KuKltpcUm0j89dVw4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImlhdCI6MTY1MzgzMDI0MCwiZXhwIjoxNjUzODMzODQwfQ.OIzZfW0BzDNCVYCMmOYXE1ngThCMu2rgwWOLf2R5I0Y
 ###
 GET http://localhost:3003/api/accounts/
 
@@ -36,19 +36,18 @@ GET http://localhost:3003/api/accounts/
 ### BILLS
 POST http://localhost:3003/api/bills?group_id=8
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImlhdCI6MTY1MzgxOTYxNSwiZXhwIjoxNjUzODIzMjE1fQ.br8-du1gTKIIwMvNhmOTyQRHj1KuKltpcUm0j89dVw4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImlhdCI6MTY1MzgzMDI0MCwiZXhwIjoxNjUzODMzODQwfQ.OIzZfW0BzDNCVYCMmOYXE1ngThCMu2rgwWOLf2R5I0Y
 
 {
   "group_id": 8,
-  "amount": 120,
-  "description": "car rental"
+  "amount": 100,
+  "description": "food"
 }
 
 ###
 GET http://localhost:3003/api/bills/2
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImlhdCI6MTY1MzgxOTYxNSwiZXhwIjoxNjUzODIzMjE1fQ.br8-du1gTKIIwMvNhmOTyQRHj1KuKltpcUm0j89dVw4
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImlhdCI6MTY1MzgzMDI0MCwiZXhwIjoxNjUzODMzODQwfQ.OIzZfW0BzDNCVYCMmOYXE1ngThCMu2rgwWOLf2R5I0Y
 
 ### GROUPS
 GET http://localhost:3003/api/groups
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImlhdCI6MTY1MzgxOTYxNSwiZXhwIjoxNjUzODIzMjE1fQ.br8-du1gTKIIwMvNhmOTyQRHj1KuKltpcUm0j89dVw4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImlhdCI6MTY1MzgzMDI0MCwiZXhwIjoxNjUzODMzODQwfQ.OIzZfW0BzDNCVYCMmOYXE1ngThCMu2rgwWOLf2R5I0Y

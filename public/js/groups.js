@@ -76,7 +76,7 @@ function renderGroups(arr, dest) {
     makeEl('h3', `ID: ${cObj.group_id}`, 'card-id', groupArticleEl);
     makeEl('p', `${cObj.name}`, 'card-group-title', groupArticleEl);
     groupArticleEl.addEventListener('click', () => {
-      window.location.href = `bills.html?group_id=${cObj.group_id} + ${cObj.name}`;
+      window.location.href = `bills.html?group_id=${cObj.group_id}&groupName=${cObj.name}`;
     });
   });
 }

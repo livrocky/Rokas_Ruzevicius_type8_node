@@ -45,7 +45,6 @@ border: 2px solid black;
   .invalid-input {
     border: 2px solid tomato;
     background-color: rgb(251, 238, 235);
-    /* box-shadow: 10px 10px 10px rgb(171, 234, 144); */
 
   }
   
