@@ -13,7 +13,7 @@ This is a system that allows sharing your expenses in a private groups, only acc
 ## Follow the following commands :rocket:
 
 ```
-npm install -y
+npm install
 ```
 
 You may need to go to package.json file and change the line that starts with "test" to :arrow_right: "start": "nodemon src/server.js"
@@ -30,6 +30,7 @@ If you face any furter issues, run a help command in the terminal for additional
 ```
 help
 ```
+
 
 ## The Author :coffee:  :computer:
 Rokas Ruževičius
